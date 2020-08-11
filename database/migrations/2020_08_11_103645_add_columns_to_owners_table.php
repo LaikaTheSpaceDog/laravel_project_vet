@@ -17,7 +17,7 @@ class AddColumnsToOwnersTable extends Migration
             $table->string("address_1", 200)->default(0);
             $table->string("address_2", 200)->nullable($value = true);
             $table->string("town", 50)->default(0);
-            $table->string("postcode", 8)->default(0);
+            $table->string("postcode", 10)->default(0);
         });
     }
 
