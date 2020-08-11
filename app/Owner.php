@@ -17,4 +17,13 @@ class Owner extends Model
         }
         return "Yes we have {$number} bananas";
     }   
+
+    public function fullName() {
+        return "{$this->first_name} {$this->last_name}";
+    }
+
+    public function fullAddress() {
+        return "{$this->address_1}, {$this->address_2}, {$this->town}, {$this->postcode}";
+    }
+
 }

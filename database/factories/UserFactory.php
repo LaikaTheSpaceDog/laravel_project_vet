@@ -38,7 +38,5 @@ $factory->define(Owner::class, function (Faker $faker) {
         'address_2' => $faker->secondaryAddress,
         'town' => $faker->city,
         'postcode'=> $faker->postcode,
-        'created_at' => $faker->dateTime($max = 'now'),
-        'updated_at' => now(),
     ];
 });
