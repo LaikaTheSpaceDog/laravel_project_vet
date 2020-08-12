@@ -64,9 +64,10 @@ class OwnerTest extends TestCase
         ]);
         
         $ownerFromDB = Owner::all()->first();
-        $limit = 14;
         
         $ownerFromDB->telephone = "68454831409601717171717171717171";
+
+        $this->assertSame(Owner::telephoneValid($ownerFromDB->telephone), false);
 
     }
 }

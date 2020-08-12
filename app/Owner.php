@@ -45,6 +45,6 @@ class Owner extends Model
 
     public static function telephoneValid($telephone)
     {
-
+        return strlen($telephone) <= 11 && strlen($telephone) >= 14;
     }
 }
