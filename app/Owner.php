@@ -37,9 +37,9 @@ class Owner extends Model
         return "{$this->address_1}, {$this->address_2}, {$this->town}, {$this->postcode}";
     }
 
-    public static function ownerTest()
+    public static function newEmail($email)
     {
-
+        $emails = Owner::where('email', $email)->get()->toArray();
+        return $emails === [];
     }
-
 }
