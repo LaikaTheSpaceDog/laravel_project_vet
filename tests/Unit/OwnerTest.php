@@ -33,7 +33,24 @@ class OwnerTest extends TestCase
 
     // }
 
-    public function testEmail()
+    // public function testEmail()
+    // {
+    //     Owner::create([
+    //         "first_name" => "Charlotte",
+    //         "last_name" => "Radley",
+    //         "telephone" => "+6845483140960",
+    //         "email" => "cradz@gmail.com",
+    //         "address_1" => "5 Not-a-street",
+    //         "address_2" => "Flat 13",
+    //         "town" => "Salford",
+    //         "postcode" => "M10 6GH",
+    //     ]);
+
+    //     $this->assertSame(Owner::newEmail("oscarjwales@gmail.com"), true);
+    //     $this->assertSame(Owner::newEmail("cradz@gmail.com"), false);
+    // }
+
+    public function testTelephone()
     {
         Owner::create([
             "first_name" => "Charlotte",
@@ -45,8 +62,11 @@ class OwnerTest extends TestCase
             "town" => "Salford",
             "postcode" => "M10 6GH",
         ]);
+        
+        $ownerFromDB = Owner::all()->first();
+        $limit = 14;
+        
+        $ownerFromDB->telephone = "68454831409601717171717171717171";
 
-        $this->assertSame(Owner::newEmail("oscarjwales@gmail.com"), true);
-        $this->assertSame(Owner::newEmail("cradz@gmail.com"), false);
     }
 }

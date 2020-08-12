@@ -42,4 +42,9 @@ class Owner extends Model
         $emails = Owner::where('email', $email)->get()->toArray();
         return $emails === [];
     }
+
+    public static function telephoneValid($telephone)
+    {
+
+    }
 }
