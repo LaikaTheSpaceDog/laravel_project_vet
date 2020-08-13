@@ -15,4 +15,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/owners', "Owners@index");
 Route::get('/', "Home@index");
+Route::get('/create', "Owners@create");
 Route::get('/owners/{owner}', "Owners@show");

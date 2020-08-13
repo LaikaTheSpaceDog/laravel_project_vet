@@ -18,10 +18,15 @@ class Owners extends Controller
 
     public function show(Owner $owner)
     {
-        $owner = Owner::find($owner->id);
 
         return view("owner", [
             "owner" => $owner
         ]);
     }
+
+    public function create()
+    {
+        return view("form");
+    }
 }
+
