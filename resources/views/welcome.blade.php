@@ -4,5 +4,5 @@
 }}@endsection
 
 @section("content")
-    <h2 class="display-2 text-center">{{ "{$greeting}, traveller" }}</h2>
+    <h3 class="display-3 text-center">{{ "{$greeting}, welcome to our pet owner database" }}</h3>
 @endsection

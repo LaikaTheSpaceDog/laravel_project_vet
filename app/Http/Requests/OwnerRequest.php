@@ -29,7 +29,7 @@ class OwnerRequest extends FormRequest
             "telephone" => ["required", "string", "max:14"],
             "email" => ["required", "email"],
             "address_1" => ["required", "string", "max:200"],
-            "address_2" => ["string", "max:200"],
+            "address_2" => ["max:200"],
             "town" => ["required", "string", "max:50"],
             "postcode" => ["required", "string", "max:10"],
         ];
