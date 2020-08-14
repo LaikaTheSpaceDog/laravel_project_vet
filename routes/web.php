@@ -20,4 +20,6 @@ Route::group(["prefix" => 'owners'], function() {
     Route::get('/create', "Owners@create");
     Route::post('/create', "Owners@createPost");
     Route::get('/{owner}', "Owners@show");
+    Route::get('/{owner}/edit', "Owners@edit");
+    Route::post('/{owner}/edit', "Owners@editPost");
 });

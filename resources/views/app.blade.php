@@ -14,8 +14,10 @@
     </header>
     <main class="container">
         @yield("content")
+        @yield("form")
+        @yield("button")
     </main>
-    @include("partials/footer")
+        @include("partials/footer")
 </body>
 
 </html>

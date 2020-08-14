@@ -29,13 +29,27 @@ class Owners extends Controller
 
     public function create()
     {
-        return view("form");
+        return view("createForm");
     }
 
     public function createPost(OwnerRequest $request)
     {
         $data = $request->all();
         $owner = Owner::create($data);
+        return redirect("/owners/{$owner->id}");
+    }
+
+    public function edit(Owner $owner)
+    {
+        return view("editForm", [
+            "owner" => $owner,
+        ]);
+    }
+
+    public function editPost(OwnerRequest $request, Owner $owner)
+    {
+        $data = $request->all();
+        $owner->fill($data)->save();
         return redirect("/owners/{$owner->id}");
     }
 }
