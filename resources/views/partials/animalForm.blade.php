@@ -58,7 +58,7 @@
         </div>
         <div class="form-group">
             <label for="owner_id">Owner ID</label>
-        <input id="owner_id"name="owner_id"class="form-control @error('owner_id') is-invalid @enderror"value="{{ $owner->id }}" readonly>
+        <input id="owner_id"name="owner_id"class="form-control @error('owner_id') is-invalid @enderror"value="{{ $owner->id ?? '' }}" readonly>
             @error('town')
                 <p class="invalid-feedback">
                     {{ $message }}

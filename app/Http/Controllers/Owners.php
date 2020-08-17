@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Owner;
 use App\Animal;
 use App\Http\Requests\OwnerRequest;
+use App\Http\Requests\AnimalRequest;
 
 date_default_timezone_set("Europe/London");
 
@@ -65,7 +66,7 @@ class Owners extends Controller
 
     }
 
-    public function addAnimal(Request $request)
+    public function addAnimal(AnimalRequest $request)
     {
         $data = $request->all();
         $animal = Animal::create($data);
