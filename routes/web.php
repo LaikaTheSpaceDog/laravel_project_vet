@@ -22,6 +22,8 @@ Route::group(["prefix" => 'owners'], function() {
     Route::post('/create', "Owners@createPost");
     Route::get('/search', "Owners@search");
     Route::get('/{owner}', "Owners@show");
+    Route::post('/{owner}', "Owners@addAnimal");
     Route::get('/{owner}/edit', "Owners@edit");
     Route::post('/{owner}/edit', "Owners@editPost");
 });
+
