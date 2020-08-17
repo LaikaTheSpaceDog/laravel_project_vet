@@ -15,12 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/owners', "Owners@index");
 Route::get('/', "Home@index");
-Route::get("/search", "Search@find");
 
 
 Route::group(["prefix" => 'owners'], function() {
     Route::get('/create', "Owners@create");
     Route::post('/create', "Owners@createPost");
+    Route::get('/search', "Owners@search");
     Route::get('/{owner}', "Owners@show");
     Route::get('/{owner}/edit', "Owners@edit");
     Route::post('/{owner}/edit', "Owners@editPost");

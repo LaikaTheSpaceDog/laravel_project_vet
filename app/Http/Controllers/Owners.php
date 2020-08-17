@@ -52,5 +52,16 @@ class Owners extends Controller
         $owner->fill($data)->save();
         return redirect("/owners/{$owner->id}");
     }
+
+    public function search(Request $request)
+    {
+        $query = $request->get('search');
+        return view("owners", [
+            "owners" => Owner::where('first_name', 'LIKE', '%' . $query . '%')
+                               ->orWhere('last_name', 'LIKE', '%' . $query . '%')
+                               ->get()->sortByDesc("updated_at")
+        ]);
+
+    }
 }
 
