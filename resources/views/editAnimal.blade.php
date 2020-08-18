@@ -4,5 +4,5 @@
 }}@endsection
 
 @section("form")
-    @include("partials/animalForm")
+    @include("partials/editAnimalForm")
 @endsection

@@ -30,4 +30,5 @@ Route::group(["prefix" => 'owners'], function() {
 Route::get('/animals', "Animals@index");
 Route::get('/animals/{animal}', "Animals@show");
 Route::get('/animals/{animal}/edit', "Animals@edit");
+Route::post('/animals/{animal}/edit', "Animals@editPost");
 

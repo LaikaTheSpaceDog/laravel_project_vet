@@ -66,10 +66,12 @@ class Owners extends Controller
 
     }
 
-    public function addAnimal(AnimalRequest $request)
+    public function addAnimal(AnimalRequest $request, Owner $owner)
     {
-        $data = $request->all();
-        $animal = Animal::create($data);
+        // $data = $request->all();
+        // $animal = Animal::create($data);
+        $animal = new Animal($request->all());
+        $owner->animals()->save($animal);
         return redirect("/owners/{$animal->owner_id}");
     }
 }
