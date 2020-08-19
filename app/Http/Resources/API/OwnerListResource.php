@@ -16,7 +16,8 @@ class OwnerListResource extends JsonResource
     {
         return [
             "id" => $this->id,
-            "name" => "{$this->first_name} {$this->last_name}"
+            "first name" => $this->first_name,
+            "last name" => $this->last_name
         ];
     }
 }

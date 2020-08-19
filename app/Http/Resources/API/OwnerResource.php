@@ -18,7 +18,10 @@ class OwnerResource extends JsonResource
             "id" => $this->id,
             "first_name" => $this->first_name,
             "last_name" => $this->last_name,
-            "address" => "{$this->address_1}, {$this->address_2}, {$this->town}, {$this->postcode}",
+            "address_1" => $this->address_1, 
+            "address_2" => $this->address_2, 
+            "town" => $this->town, 
+            "postcode" => $this->postcode,
             "animals" => $this->animals->pluck('name'),
         ];
     }
