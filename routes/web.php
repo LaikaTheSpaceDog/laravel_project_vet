@@ -32,3 +32,7 @@ Route::get('/animals/{animal}', "Animals@show");
 Route::get('/animals/{animal}/edit', "Animals@edit");
 Route::post('/animals/{animal}/edit', "Animals@editPost");
 
+
+Auth::routes(['register' => false]);
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -4,6 +4,7 @@
                 <li class="nav-item"><a class="nav-link" href="/owners">Owners</a></li>
                 <li class="nav-item"><a class="nav-link" href="/owners/create">Create Owner</a></li>
                 <li class="nav-item"><a class="nav-link" href="/animals">Animals</a></li>
+                <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
             </ul>
             <form class="form-inline" action="/owners/search">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="search">
