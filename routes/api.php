@@ -29,6 +29,7 @@ Route::group(["prefix" => "owners"], function () {
 
 Route::group(["prefix" => "animals"], function () {
     Route::get("", [Animals::class, "index"]);
+    Route::post("", [Animals::class, "store"]);
     Route::group(["prefix" => "{animal}"], function () {
         Route::get("", [Animals::class, "show"]);
         Route::put("", [Animals::class, "update"]);

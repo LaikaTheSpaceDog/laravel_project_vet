@@ -36,9 +36,16 @@ class Animals extends Controller
         // } else {
         //     return "Inocrrect owner ID";
         // }
+
         $animal = new Animal($request->all());
         $owner->animals()->save($animal);
         return new AnimalResource($animal);
+
+        // $data = $request->only(["name", "type", "dob", "weight_kg", "height_m", "biteyness", "owner_id"]);
+        // $animal = Animal::create($data);
+        // $treatments = Treatment::fromStrings($request->get("tags"));
+        // $article->treatments()->sync($treatments->pluck("id")->all());
+        // return new AnimalResource($animal);
     }
 
     /**

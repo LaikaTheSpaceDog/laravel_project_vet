@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 
 class Treatment extends Model
 {
@@ -19,7 +20,13 @@ class Treatment extends Model
 
     public static function fromString(string $str) : Treatment
     {
-        return Treatment::create(["name" => $str]);
+        $treatment = Treatment::where("name", trim($str))->first();
+        return $treatment ? $treatment :  Treatment::create(["name" => $str]);
+    }
+
+    static public function fromStrings(array $strings) : Collection
+    {
+        return collect($strings)->map([Treatment:: class, "fromString"]);
     }
 
 }

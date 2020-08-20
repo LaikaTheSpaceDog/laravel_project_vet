@@ -31,4 +31,11 @@ class Animal extends Model
     {
         return $this->biteyness >= 3;
     }
+
+    public function setTreatments(array $strings) : Animal
+    {
+        $treatments = Treatment::fromStrings($strings);
+        $this->treatments()->sync($treatments->pluck("id"));
+        return $this;
+    }
 }
