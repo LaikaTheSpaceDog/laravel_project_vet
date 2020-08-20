@@ -11,6 +11,11 @@ class Animal extends Model
     {
         return $this->belongsTo(Owner::class);
     }
+
+    public function treatments()
+    {
+        return $this->belongsToMany(Treatment::class);
+    }
     
     protected $fillable = [
         "name",
