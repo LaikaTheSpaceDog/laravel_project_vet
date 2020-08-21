@@ -9,6 +9,7 @@ use App\Animal;
 use App\Http\Resources\API\AnimalResource;
 use App\Http\Resources\API\AnimalListResource;
 use App\Http\Requests\API\AnimalRequest;
+use App\Http\Requests\API\AnimalStoreRequest;
 
 class Animals extends Controller
 {
@@ -28,7 +29,7 @@ class Animals extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(AnimalRequest $request, Owner $owner)
+    public function store(AnimalStoreRequest $request, Owner $owner)
     {
         // $data = $request->all();
         // if ($request->owner_id === $owner->id) {

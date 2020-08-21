@@ -4,7 +4,7 @@
     }}@endsection
     
     @section("content")
-        <h1 class="display-1 text-center">Owners List</h1>
+        <h3 class="display-3 text-center">Owners List</h3>
         @if (count($owners) >= 1)
             @include("partials/list")
         @else 

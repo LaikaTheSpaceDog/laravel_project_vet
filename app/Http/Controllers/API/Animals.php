@@ -9,6 +9,7 @@ use App\Treatment;
 use App\Http\Requests\API\AnimalRequest;
 use App\Http\Resources\API\AnimalResource;
 use App\Http\Resources\API\AnimalListResource;
+use App\Http\Requests\API\AnimalStoreRequest;
 
 class Animals extends Controller
 {
@@ -28,7 +29,7 @@ class Animals extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(AnimalRequest $request)
+    public function store(AnimalStoreRequest $request)
     {
         $data = $request->only(["name", "type", "dob", "weight_kg", "height_m", "biteyness", "owner_id"]);
         $animal = Animal::create($data)->setTreatments($request->get("treatments"));

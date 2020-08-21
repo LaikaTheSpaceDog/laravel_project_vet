@@ -14,10 +14,10 @@ class AddColumnsToOwnersTable extends Migration
     public function up()
     {
         Schema::table('owners', function (Blueprint $table) {
-            $table->string("address_1", 200)->default(0);
+            $table->string("address_1", 200)->default("");
             $table->string("address_2", 200)->nullable($value = true);
-            $table->string("town", 50)->default(0);
-            $table->string("postcode", 10)->default(0);
+            $table->string("town", 50)->default("");
+            $table->string("postcode", 10)->default("");
         });
     }
 

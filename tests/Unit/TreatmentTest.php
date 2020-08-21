@@ -16,6 +16,7 @@ class TreatmentTest extends TestCase
      */
     public function setUp() : void
     {
+        parent::setUp();
         $this->treatment = new Treatment();
     }
 
