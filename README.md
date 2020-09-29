@@ -2,7 +2,6 @@
 This app was built during the Laravel module (weeks 7 and 8) of the Develop Me Coding Fellowship. The UI was built using Blade templating with basic bootstrap styling.
 
 ## Installation
-
 To get set up with the project on your local machine:
 
 1.  Run `git clone git@github.com:LaikaTheSpaceDog/laravel_project_vet.git <desired sub-directory>`. The project files will be cloned to your local repo.
@@ -27,19 +26,31 @@ To get set up with the project on your local machine:
 13. Run `artisan migrate` to run all migrations.
 14. _optional_: Run `artisan db:seed` to run the Owners seeder - this will populate the Owner table with 50 random entries created using the Faker php library.
 
-## API Routes
-1. GET http://homestead.test/api/owners
-2. POST http://homestead.test/api/owners
-3. GET http://homestead.test/api/owners/{id}
-4. PUT http://homestead.test/api/owners/{id}
-5. DELETE http://homestead.test/api/owners/{id}
-6. GET http://homestead.test/api/owners/{id}/animals
-7. POST http://homestead.test/api/owners/{id}/animals
-   
-8. GET http://homestead.test/api/animals
-9. POST http://homestead.test/api/animals
-10. GET http://homestead.test/api/animals/{id}
-11. PUT http://homestead.test/api/animals/{id}
-12. DELETE http://homestead.test/api/animals/{id}
+## Authorisation
+This app includes some authorisation so in order to access all features you should create a user. The easiest way to do this is to use `artisan tinker`:
+````
+$user=newUser();
+$user->name="Your Name"
+$user->role="Your Role"
+$user->email="your@email.horse"
+$user->password=Hash::make("password")
+$user->save()
+````
+You should now be able to log in to the app using these details. This will give you permission to create/edit owners and animals via the UI. 
 
-13. GET http://homestead.test/api/users
+## API Routes
+1. GET: http://homestead.test/api/owners
+2. POST: http://homestead.test/api/owners
+3. GET: http://homestead.test/api/owners/{id}
+4. PUT: http://homestead.test/api/owners/{id}
+5. DELETE: http://homestead.test/api/owners/{id}
+6. GET: http://homestead.test/api/owners/{id}/animals
+7. POST: http://homestead.test/api/owners/{id}/animals
+   
+1. GET: http://homestead.test/api/animals
+2. POST: http://homestead.test/api/animals
+3. GET: http://homestead.test/api/animals/{id}
+4. PUT: http://homestead.test/api/animals/{id}
+5. DELETE: http://homestead.test/api/animals/{id}
+
+1. GET: http://homestead.test/api/users
