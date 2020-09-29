@@ -1,5 +1,5 @@
 # Pet Database
-<img src="/pet.png" alt="Screen shot of Pet Database homepage">
+![Screen shot of pet database homepage](pet.png)
 
 This app was built during the Laravel module (weeks 7 and 8) of the Develop Me Coding Fellowship. The UI was built using Blade templating with basic bootstrap styling. This app also includes a RESTful API (API routes are all listed below), as well as user authentication (a login form in the UI and API Auth using Passport).
 
