@@ -1,8 +1,10 @@
 # Pet Database
-This app was built during the Laravel module (weeks 7 and 8) of the Develop Me Coding Fellowship. The UI was built using Blade templating with basic bootstrap styling.
+<img src="/pet.png" alt="Screen shot of Pet Database homepage">
+
+This app was built during the Laravel module (weeks 7 and 8) of the Develop Me Coding Fellowship. The UI was built using Blade templating with basic bootstrap styling. This app also includes a RESTful API (API routes are all listed below), as well as user authentication (a login form in the UI and API Auth using Passport).
 
 ## Installation
-To get set up with the project on your local machine:
+To get set up with the project on your local machine you will need [Vagrant](https://www.vagrantup.com/) downloaded on your machine. Once you've done this, follow these instructions:
 
 1.  Run `git clone git@github.com:LaikaTheSpaceDog/laravel_project_vet.git <desired sub-directory>`. The project files will be cloned to your local repo.
 2.  Go to your project directory and run `npm install`. This will install the dependencies in the local node_modules folder.
@@ -38,7 +40,7 @@ $user->save()
 ````
 You should now be able to log in to the app using these details. This will give you permission to create/edit owners and animals via the UI. 
 
-### API Auth
+<h3>API Auth</h3>
 This app uses Passport to deal with tokens to authenticate API users. The Laravel Passport package should have been installed when you ran `composer install` and the Passport database migrations should have been run when you ran `artisan migrate`. Next:
 1. Run `artisan passport:install` and make a note of the password grant Client ID and Client Secret that are returned after installation.
 2. If you haven't already, create a user using the instructions above. Make sure to give the user the role of 'vet' so they have access to all API routes.
