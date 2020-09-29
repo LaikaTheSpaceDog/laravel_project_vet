@@ -38,19 +38,39 @@ $user->save()
 ````
 You should now be able to log in to the app using these details. This will give you permission to create/edit owners and animals via the UI. 
 
+### API Auth
+This app uses Passport to deal with tokens to authenticate API users. The Laravel Passport package should have been installed when you ran `composer install` and the Passport database migrations should have been run when you ran `artisan migrate`. Next:
+1. Run `artisan passport:install` and make a note of the password grant Client ID and Client Secret that are returned after installation.
+2. If you haven't already, create a user using the instructions above. Make sure to give the user the role of 'vet' so they have access to all API routes.
+3. Make a `POST` request (for example, using Postman) to `http://homestead.test/oauth/token` with the body:
+   ````
+   {
+       "grant_type":"password",
+       "client_id":"<your_client_id>",
+       "client_secret":"<your_client_secret>",
+       "username":"an.author@gmail.com",
+       "password":"password"
+    }
+   ````
+4. Make a note of the token that you recieve in return. You can now use this as the Bearer Token when making requests to the API.
+
+
 ## API Routes
+### Owners
 1. GET: http://homestead.test/api/owners
 2. POST: http://homestead.test/api/owners
 3. GET: http://homestead.test/api/owners/{id}
 4. PUT: http://homestead.test/api/owners/{id}
 5. DELETE: http://homestead.test/api/owners/{id}
-6. GET: http://homestead.test/api/owners/{id}/animals
-7. POST: http://homestead.test/api/owners/{id}/animals
-   
+6. GET: http://homestead.test/api/owners/{id}/animals (This API route includes auth, user 'role' must be 'vet')
+7. POST: http://homestead.test/api/owners/{id}/animals (This API route includes auth, user 'role' must be 'vet')
+
+### Animals  
 1. GET: http://homestead.test/api/animals
-2. POST: http://homestead.test/api/animals
+2. POST: http://homestead.test/api/animals (This API route includes auth, user 'role' must be 'vet')
 3. GET: http://homestead.test/api/animals/{id}
 4. PUT: http://homestead.test/api/animals/{id}
-5. DELETE: http://homestead.test/api/animals/{id}
+5. DELETE: http://homestead.test/api/animals/{id} 
 
+### Users
 1. GET: http://homestead.test/api/users
